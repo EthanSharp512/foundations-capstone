@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <button class="mousepoint" id="loginBtn" onclick="location.href='./login.html'" type="button">
+            Login</button>
+        <img class="mousepoint" id="logopic" src="/public/images/logopic.png" onclick="location.href='./home.html'" alt="Poker Tracker">
+    </header>
+
+    <h4>User's Profile</h4>
+
+    <div id="chartcontainer">
+        <h3>Preflop Calculator</h3>
+
+        <form action="#">
+
+            <p class="question">What position are you playing from?</p>
+
+            <form>
+                <input type="radio" id="utg" name="position" value="UTG">
+                <label for="utg">Under the gun (UTG)</label><br>
+                <input type="radio" id="hjlj" name="position" value="LJHJ">
+                <label for="hjlj">Low Jack or High Jack (LJ/HJ)</label><br>
+                <input type="radio" id="co" name="position" value="CO">
+                <label for="co">Cutoff (CO)</label><br>
+                <input type="radio" id="btnsb" name="position" value="BTNSB">
+                <label for="btnsb">Button or Small Blind (BTN/SB)</label><br>
+              </form>
+
+              <p class="question">Are your cards suited?</p>
+
+              <form>
+                <input type="radio" id="suited" name="suit" value="True">
+                <label for="suited">Same suit</label><br>
+                <input type="radio" id="offsuit" name="suit" value="False">
+                <label for="offsuit">Different suit</label><br>
+              </form><br>
+
+            <label class="question" for="cardone">First Card:</label>
+            <select name="cardeone" id="cardeone">
+              <option value="13">Ace</option>
+              <option value="12">King</option>
+              <option value="11">Queen</option>
+              <option value="10">Jack</option>
+              <option value="9">10</option>
+              <option value="8">9</option>
+              <option value="7">8</option>
+              <option value="6">7</option>
+              <option value="5">6</option>
+              <option value="4">5</option>
+              <option value="3">4</option>
+              <option value="2">3</option>
+              <option value="1">2</option>
+            </select><br>
+
+            <br><label class="question" for="cartwo">Second Card:</label>
+            <select name="cardeone" id="cardeone">
+              <option value="13">Ace</option>
+              <option value="12">King</option>
+              <option value="11">Queen</option>
+              <option value="10">Jack</option>
+              <option value="9">10</option>
+              <option value="8">9</option>
+              <option value="7">8</option>
+              <option value="6">7</option>
+              <option value="5">6</option>
+              <option value="4">5</option>
+              <option value="3">4</option>
+              <option value="2">3</option>
+              <option value="1">2</option>
+            </select><br>
+
+            <br><input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <div id="gamescontainer">
+        <h3>My Games</h3>
+
+        
+    </div>
+
+</body>
+</html>
