@@ -318,6 +318,12 @@ h4 {
     margin: 0px 0px 0px 50px;
 }
 
+.prefloptext {
+    font-size: 14pt;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+
 .flopmarginfix {
     margin: 0px 0px 0px 19px;
 }

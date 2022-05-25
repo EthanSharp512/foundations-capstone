@@ -1,15 +1,21 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const bcrypt = require('bcrypt')
 
 app.use(express.json())
-
+app.use(cors());
 app.use(express.static(path.join(__dirname, "./public")))
 
 
+const { preflopCalc, updateVpip } = require('./controller')
 
-app.put("/api/profile/:id", updateVPIP);
 
+
+app.get("/api/preflop", preflopCalc);
+app.post("/api/vpip", updateVpip);
+
+app.listen(3000);
 
 
 // const users = []
@@ -46,5 +52,3 @@ app.put("/api/profile/:id", updateVPIP);
 //         res.status(500).send()
 //     }
 // })
-
-app.listen(3000);

@@ -21,31 +21,28 @@
         <h3>Preflop Calculator</h3>
 
         <form action="#">
-
             <p class="question">What position are you playing from?</p>
-
             <form class="preflop">
                 <input class="preflop" type="radio" id="utg" name="position" value="UTG">
-                <label class="preflop" for="utg">Under the gun (UTG)</label><br>
+                <label class="prefloptext" for="utg">Under the gun (UTG)</label><br>
                 <input class="preflop" type="radio" id="hjlj" name="position" value="LJHJ">
-                <label class="preflop" for="hjlj">Low Jack or High Jack (LJ/HJ)</label><br>
+                <label class="prefloptext" for="hjlj">Low Jack or High Jack (LJ/HJ)</label><br>
                 <input class="preflop" type="radio" id="co" name="position" value="CO">
-                <label class="preflop" for="co">Cutoff (CO)</label><br>
+                <label class="prefloptext" for="co">Cutoff (CO)</label><br>
                 <input class="preflop" type="radio" id="btnsb" name="position" value="BTNSB">
-                <label class="preflop" for="btnsb">Button or Small Blind (BTN/SB)</label><br>
+                <label class="prefloptext" for="btnsb">Button or Small Blind (BTN/SB)</label><br>
               </form><br>
 
-              <p class="question">Are your cards suited?</p>
-
-              <form class="preflop">
-                <input type="radio" id="suited" name="suit" value="True">
-                <label for="suited">Same suit</label><br>
-                <input type="radio" id="offsuit" name="suit" value="False">
-                <label for="offsuit">Different suit</label><br>
-              </form><br><br>
+            <p class="question">Are your cards suited?</p>
+            <form class="preflop">
+              <input type="radio" id="suited" name="suit" value="True">
+              <label for="suited">Same suit</label><br>
+              <input type="radio" id="offsuit" name="suit" value="False">
+              <label for="offsuit">Different suit</label><br>
+            </form><br><br>
 
             <label class="question" for="cardone">First Card:</label>
-            <select class="preflop" name="cardeone" id="cardeone">
+            <select class="preflop" name="cardone" id="cardone">
               <option value="13">Ace</option>
               <option value="12">King</option>
               <option value="11">Queen</option>
@@ -61,8 +58,8 @@
               <option value="1">2</option>
             </select><br>
 
-            <br><label class="question" for="cartwo">Second Card:</label>
-            <select class="preflop flopmarginfix" name="cardeone" id="cardeone">
+            <br><label class="question" for="cardtwo">Second Card:</label>
+            <select class="preflop flopmarginfix" name="cardtwo" id="cardtwo">
               <option value="13">Ace</option>
               <option value="12">King</option>
               <option value="11">Queen</option>
@@ -78,7 +75,7 @@
               <option value="1">2</option>
             </select><br>
 
-            <br><input class="preflop" type="submit" value="Submit" />
+            <br><input class="preflop" id="chartBtn" type="submit" value="Submit" />
       </form>
     </div>
 
@@ -105,6 +102,7 @@
 
         
     </div>
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/index.js"></script>
 </body>
 </html>
