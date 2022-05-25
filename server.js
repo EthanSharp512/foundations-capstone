@@ -4,8 +4,9 @@ const bcrypt = require('bcrypt')
 
 app.use(express.json())
 
-const users = []
+app.use(express.static(path.join(__dirname, "./public")))
 
+const users = []
 
 app.get('/users', (req, res) => {
     res.json(users)
