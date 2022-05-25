@@ -235,3 +235,5 @@ const UTG = {
     "QTs": "Play Queen-Ten suited from UTG",
     "JTs": "Play Jack-Ten suited from UTG, and possibly raise",
 }
+
+module.exports ={ cardValues, BTNSB, CO, LJHJ, UTG}

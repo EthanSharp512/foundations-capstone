@@ -12,7 +12,7 @@
     <header class="header">
         <button class="mousepoint" id="loginBtn" onclick="location.href='./login.html'" type="button">
             &nbsp;Login&nbsp;</button>
-        <img class="mousepoint" id="logopic" src="/public/images/logopic.png" onclick="location.href='./home.html'" alt="Poker Tracker">
+        <img class="mousepoint" id="logopic" src="./images/logopic.png" onclick="location.href='./home.html'" alt="Poker Tracker">
     </header>
 
     <h4>User's Profile</h4>
@@ -22,7 +22,7 @@
 
         <form action="#">
             <p class="question">What position are you playing from?</p>
-            <form class="preflop">
+            <form class="preflop" id="positionid">
                 <input class="preflop" type="radio" id="utg" name="position" value="UTG">
                 <label class="prefloptext" for="utg">Under the gun (UTG)</label><br>
                 <input class="preflop" type="radio" id="hjlj" name="position" value="LJHJ">
@@ -34,7 +34,7 @@
               </form><br>
 
             <p class="question">Are your cards suited?</p>
-            <form class="preflop">
+            <form class="preflop" id="suitid">
               <input type="radio" id="suited" name="suit" value="True">
               <label for="suited">Same suit</label><br>
               <input type="radio" id="offsuit" name="suit" value="False">
@@ -79,30 +79,12 @@
       </form>
     </div>
 
+
     <div id="gamescontainer">
         <h3>My VPIP</h3>
 
-
-
-
-
-
-        
-    
-        
-
-
-
-
-
-
-
-
-
-
-        
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="/index.js"></script>
+    <script src="/main.js"></script>
 </body>
 </html>

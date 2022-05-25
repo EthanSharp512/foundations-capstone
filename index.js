@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require('path')
 const cors = require("cors");
 const app = express();
 const bcrypt = require('bcrypt')
@@ -11,11 +12,13 @@ app.use(express.static(path.join(__dirname, "./public")))
 const { preflopCalc, updateVpip } = require('./controller')
 
 
-
-app.get("/api/preflop", preflopCalc);
+app.post("/api/preflop", preflopCalc);
 app.post("/api/vpip", updateVpip);
 
-app.listen(3000);
+
+app.listen(3000, () => {
+    console.log('Running on port 3000')
+});
 
 
 // const users = []
