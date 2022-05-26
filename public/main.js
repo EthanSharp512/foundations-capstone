@@ -1,4 +1,5 @@
 const chartBtn = document.querySelector('#chartBtn')
+const recommendation = document.querySelector(`#recommendation`)
 // const vpipBtn = document.querySelector('#')
 
 const preflopCalc = (e) => {
@@ -21,12 +22,11 @@ const preflopCalc = (e) => {
         card2: card2
     }
 
-    console.log(body)
 
     axios.post("http://localhost:3000/api/preflop", body)
     .then(res => {
         const data = res.data;
-        console.log(data)
+        recommendation.textContent = data;
     })
     .catch(err => {
         alert(err)

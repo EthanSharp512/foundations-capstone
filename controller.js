@@ -37,17 +37,37 @@ module.exports = {
             hand = handStr.concat('');
         }
 
+        let recommendation = ["Fold this hand"]
 
-        let recommendation = []
-
-
-        for(let key in position){
-            if(key === hand) {
-                recommendation.push(position[key]);
-            } 
+        if(position === 'BTNSB') {
+            for(let key in BTNSB){
+                if(key === hand) {
+                    recommendation.splice(0, 1, BTNSB[key]);
+                }
+            }
+        } else if(position === 'CO') {
+            for(let key in CO){
+                if(key === hand) {
+                    recommendation.splice(0, 1, CO[key]);
+                }
+            }
+        } else if(position === 'LJHJ') {
+            for(let key in LJHJ){
+                if(key === hand) {
+                    recommendation.splice(0, 1, LJHJ[key]);
+                }
+            }
+        } else if(position === 'UTG') {
+            for(let key in UTG){
+                if(key === hand) {
+                    recommendation.splice(0, 1, UTG[key]);
+                }
+            }
         }
+       
+        recommendationStr = recommendation.join()
 
-        res.status(200).send(position)
+        res.status(200).send(recommendationStr)
     },
 
    
