@@ -1,9 +1,11 @@
 const chartBtn = document.querySelector('#chartBtn')
 // const vpipBtn = document.querySelector('#')
 
-const preflopCalc = () => {
-    const positionInput = document.querySelector("#positionid");
-    const suitInput = document.querySelector("#suitid");
+const preflopCalc = (e) => {
+    e.preventDefault()
+
+    const positionInput = document.querySelector("#position");
+    const suitInput = document.querySelector("#suit");
     const card1Input = document.querySelector("#cardone");
     const card2Input = document.querySelector("#cardtwo");
 
@@ -21,10 +23,10 @@ const preflopCalc = () => {
 
     console.log(body)
 
-    axios.post("http://localhost:3000/api/preflop/", body)
+    axios.post("http://localhost:3000/api/preflop", body)
     .then(res => {
         const data = res.data;
-        alert(data);
+        console.log(data)
     })
     .catch(err => {
         alert(err)
