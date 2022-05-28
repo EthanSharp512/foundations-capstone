@@ -1,4 +1,5 @@
 const {cardValues, BTNSB, CO, LJHJ, UTG} = require('./hands')
+const {Two, Three, Four, Five, Six, Seven, Eight, Nine} = require('./pair')
 
 function getChart (chart) {
     for (const key in chart) {
@@ -9,10 +10,75 @@ function getChart (chart) {
 let rangeHands = [] 
 
 module.exports = {
+
+    pairWinCalc: (req, res) => {
+
+        const {player, pair} = req.body
+
+        let pairPercentage = []
+
+        pairPercentage.splice(0)
+
+        if(player === '2') {
+            for(let key in Two){
+                if(key === pair) {
+                    pairPercentage.push(Two[key]);
+                }
+            }
+        } else if(player === '3') {
+            for(let key in Three){
+                if(key === pair) {
+                    pairPercentage.push(Three[key]);
+                }
+            }
+        } else if(player === '4') {
+            for(let key in Four){
+                if(key === pair) {
+                    pairPercentage.push(Four[key]);
+                }
+            }
+        } else if(player === '5') {
+            for(let key in Five){
+                if(key === pair) {
+                    pairPercentage.push(Five[key]);
+                }
+            }
+        } else if(player === '6') {
+            for(let key in Six){
+                if(key === pair) {
+                    pairPercentage.push(Six[key]);
+                }
+            }
+        } else if(player === '7') {
+            for(let key in Seven){
+                if(key === pair) {
+                    pairPercentage.push(Seven[key]);
+                }
+            }
+        } else if(player === '8') {
+            for(let key in Eight){
+                if(key === pair) {
+                    pairPercentage.push(Eight[key]);
+                }
+            }
+        } else if(player === '9') {
+            for(let key in Nine){
+                if(key === pair) {
+                    pairPercentage.push(Nine[key]);
+                }
+            }
+        } 
+       
+        pairPercentageStr = pairPercentage.join()
+
+        res.status(200).send(pairPercentageStr)
+    },
+
+
+
     
     rangeList: (req, res) => {
-        console.log("string")
-        console.log(req.params.chart)
+        
         let pos = req.params.chart
 
         rangeHands.splice(0)
@@ -29,7 +95,7 @@ module.exports = {
         else if(pos === 'UTG') {
             getChart(UTG)
             }
-            
+
         const rangeHandsStr = rangeHands.join().replaceAll(',', ', ')  
         res.status(200).send(rangeHandsStr)
     },
