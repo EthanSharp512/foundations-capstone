@@ -9,11 +9,11 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, "./public")))
 
 
-const { preflopCalc, updateVpip } = require('./controller')
+const { preflopCalc, pairWinCalc, rangeList } = require('./controller')
 
-
+app.get("/api/range/:chart", rangeList)
 app.post("/api/preflop", preflopCalc);
-app.post("/api/vpip", updateVpip);
+app.post("/api/pair", pairWinCalc);
 
 
 app.listen(3000, () => {

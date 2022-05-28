@@ -1,8 +1,40 @@
 const {cardValues, BTNSB, CO, LJHJ, UTG} = require('./hands')
 
+function getChart (chart) {
+    for (const key in chart) {
+            rangeHands.push(key)
+    }
+}
 
+let rangeHands = [] 
 
 module.exports = {
+    
+    rangeList: (req, res) => {
+        console.log("string")
+        console.log(req.params.chart)
+        let pos = req.params.chart
+
+        rangeHands.splice(0)
+
+        if(pos === 'BTNSB') {
+            getChart(BTNSB)
+            }
+        else if(pos === 'CO') {
+            getChart(CO)
+            }
+        else if(pos === 'LJHJ') {
+            getChart(LJHJ)
+            }
+        else if(pos === 'UTG') {
+            getChart(UTG)
+            }
+            
+        const rangeHandsStr = rangeHands.join().replaceAll(',', ', ')  
+        res.status(200).send(rangeHandsStr)
+    },
+
+
 
 
     preflopCalc: (req, res) => {

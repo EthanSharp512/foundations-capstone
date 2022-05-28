@@ -15,73 +15,139 @@
         <img class="mousepoint" id="logopic" src="./images/logopic.png" onclick="location.href='./index.html'" alt="Poker Tracker">
     </header>
 
-    <h4>User's Profile</h4>
+    <h4>Poker Companion</h4>
 
-    <div id="chartcontainer">
-      <h3>Preflop Calculator</h3>
-      <form action="#">
+    <div id="profile-container">
 
-        <p class="question">What position are you playing from?</p>
-        <select class="preflop" name="position" id="position">
-          <option value="UTG">Under the gun (UTG</option>
-          <option value="LJHJ">Low Jack or High Jack </option>
-          <option value="CO">Cutoff (CO)</option>
-          <option value="BTNSB">Button or Small Blind (BTN/SB)</option>
-        </select><br><br>   
-              
-        <p class="question">Are your cards suited?</p>
-        <select class="preflop" name="suit" id="suit">
-          <option value="yes">Same suit</option>
-          <option value="no">Different suits</option>
-        </select><br><br>
+      <div id="glancecontainer">
+          <h3>Preflop Charts</h3>
+          <h5>(at a glance)</h5>
 
-        <label class="question" for="cardone">First Card:</label>
-        <select class="preflop" name="cardone" id="cardone">
-          <option value="13">Ace</option>
-          <option value="12">King</option>
-          <option value="11">Queen</option>
-          <option value="10">Jack</option>
-          <option value="9">10</option>
-          <option value="8">9</option>
-          <option value="7">8</option>
-          <option value="6">7</option>
-          <option value="5">6</option>
-          <option value="4">5</option>
-          <option value="3">4</option>
-          <option value="2">3</option>
-          <option value="1">2</option>
-        </select><br>
+          <div class="border">
+            <p class="question">Select a position to display range of playable hands</p>
+            <select class="preflop" name="range" id="range">
+              <option value="UTG">Under the gun (UTG)</option>
+              <option value="LJHJ">Low Jack or High Jack (LJ/HJ)</option>
+              <option value="CO">Cutoff (CO)</option>
+              <option value="BTNSB">Button or Small Blind (BTN/SB)</option>
+            </select>
+            
+            <input class="preflop" id="rangeBtn" type="submit" value="Get Range"/>
 
-        <br><label class="question" for="cardtwo">Second Card:</label>
-        <select class="preflop flopmarginfix" name="cardtwo" id="cardtwo">
-          <option value="13">Ace</option>
-          <option value="12">King</option>
-          <option value="11">Queen</option>
-          <option value="10">Jack</option>
-          <option value="9">10</option>
-          <option value="8">9</option>
-          <option value="7">8</option>
-          <option value="6">7</option>
-          <option value="5">6</option>
-          <option value="4">5</option>
-          <option value="3">4</option>
-          <option value="2">3</option>
-          <option value="1">2</option>
-        </select><br>
+            <p class="question">Hands in this range include:</p>
 
-        <br><input class="preflop" id="chartBtn" type="submit" value="Submit" />
+            <div id="glanceCont">
+              <section></section>
+              <!-- <p class="question" id="chart"></p> -->
+            </div>
 
-        <p class="question">We recommend:</p>
-        <p class="question" id="recommendation"></p>
+          </div>
+      </div>
 
-      </form>
+      <div id="chartcontainer">
+        <h3>Preflop Calculator</h3>
+        <form action="#">
+
+          <p class="question">What position are you playing from?</p>
+          <select class="preflop" name="position" id="position">
+            <option value="UTG">Under the gun (UTG)</option>
+            <option value="LJHJ">Low Jack or High Jack (LJ/HJ)</option>
+            <option value="CO">Cutoff (CO)</option>
+            <option value="BTNSB">Button or Small Blind (BTN/SB)</option>
+          </select><br><br>   
+                
+          <p class="question">Are your cards suited?</p>
+          <select class="preflop" name="suit" id="suit">
+            <option value="yes">Same suit</option>
+            <option value="no">Different suits</option>
+          </select><br><br>
+
+          <label class="question" for="cardone">First Card:</label>
+          <select class="preflop" name="cardone" id="cardone">
+            <option value="13">Ace</option>
+            <option value="12">King</option>
+            <option value="11">Queen</option>
+            <option value="10">Jack</option>
+            <option value="9">10</option>
+            <option value="8">9</option>
+            <option value="7">8</option>
+            <option value="6">7</option>
+            <option value="5">6</option>
+            <option value="4">5</option>
+            <option value="3">4</option>
+            <option value="2">3</option>
+            <option value="1">2</option>
+          </select>
+
+          <br><label class="question" for="cardtwo">Second Card:</label>
+          <select class="preflop flopmarginfix" name="cardtwo" id="cardtwo">
+            <option value="13">Ace</option>
+            <option value="12">King</option>
+            <option value="11">Queen</option>
+            <option value="10">Jack</option>
+            <option value="9">10</option>
+            <option value="8">9</option>
+            <option value="7">8</option>
+            <option value="6">7</option>
+            <option value="5">6</option>
+            <option value="4">5</option>
+            <option value="3">4</option>
+            <option value="2">3</option>
+            <option value="1">2</option>
+          </select><br>
+
+          <br><input class="preflop" id="chartBtn" type="submit" value="Submit" />
+
+          <p class="question">We recommend:</p>
+          <p class="question" id="recommendation"></p>
+
+        </form>
+      </div>
+
+      <div id="pairscontainer">
+          <h3>Pocket Pair Win Calculator</h3>
+
+          <p class="question">How many current players?</p>
+          <select class="preflop" name="player" id="player">
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            <option value="4">Four</option>
+            <option value="5">Five</option>
+            <option value="6">Six</option>
+            <option value="7">Seven</option>
+            <option value="8">Eight</option>
+            <option value="9">Nine</option>
+          </select>
+
+          <p class="question">What pocket pair do you have?</p>
+          <select class="preflop" name="pair" id="pair">
+            <option value="22">Twos</option>
+            <option value="33">Threes</option>
+            <option value="44">Fours</option>
+            <option value="55">Fives</option>
+            <option value="66">Sixs</option>
+            <option value="77">Sevens</option>
+            <option value="88">Eights</option>
+            <option value="99">Nines</option>
+            <option value="TT">Tens </option>
+            <option value="JJ">Jacks</option>
+            <option value="QQ">Queens</option>
+            <option value="KK">Kings</option>
+            <option value="AA">Aces</option>
+          </select><br>
+
+          <br><input class="preflop" id="pairBtn" type="submit" value="Submit" />
+
+          <p class="question">We recommend:</p>
+          <p class="question" id="winpercentage"></p>
+
+      </div>
     </div>
-
-
-    <div id="gamescontainer">
-        <h3>My VPIP</h3>
-
-    </div>
+    
+    <footer>
+      <button class="footerbtn" onclick="topFunction()" id="backtotop" title="Go to top">Back to top</button>
+      <button class="footerbtn" onclick="location.href='./index.html'">Home</button>
+    </footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/main.js"></script>
 </body>
