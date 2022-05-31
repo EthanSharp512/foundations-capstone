@@ -25,7 +25,7 @@ const preflopCalc = (e) => {
         card2: card2
       }
       
-      axios.post("http://localhost:3000/api/preflop", body)
+      axios.post("/api/preflop", body)
       .then(res => {
         const data = res.data;
         recommendation.textContent = data;
@@ -49,7 +49,7 @@ const preflopCalc = (e) => {
         pair: pair
       }
           
-      axios.post("http://localhost:3000/api/pair", body)
+      axios.post("/api/pair", body)
       .then(res => {
       const data = res.data;
       winpercentage.textContent = data;
@@ -82,7 +82,7 @@ const preflopCalc = (e) => {
       clearRange()
       let range = document.querySelector('#range').value
 
-      axios.get(`http://localhost:3000/api/range/${range}`)
+      axios.get(`/api/range/${range}`)
       .then(res => {
         const data = res.data;
         console.log(res.data)
