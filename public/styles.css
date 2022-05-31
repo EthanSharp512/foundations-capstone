@@ -95,7 +95,7 @@ body {
     transition: transform 0.2s;
 }
 
-#loginBtn:hover {
+.loginBtn:hover {
     transform: scale(1.1);
 }
 
