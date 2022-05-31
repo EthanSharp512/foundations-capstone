@@ -5,10 +5,6 @@ const rangeBtn = document.querySelector("#rangeBtn");
 const pairBtn = document.querySelector('#pairBtn')
 const winpercentage = document.querySelector(`#winpercentage`)
 
-// const vpipBtn = document.querySelector('#')
-
-
-
 const preflopCalc = (e) => {
   e.preventDefault()
   
@@ -38,9 +34,6 @@ const preflopCalc = (e) => {
         alert(err)
       })
     };
-
-
-
 
     const pairWinCalc = (e) => {
       e.preventDefault()
@@ -115,15 +108,6 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-
-
 rangeBtn.addEventListener('click', rangeList)
 chartBtn.addEventListener('click', preflopCalc)
 pairBtn.addEventListener('click', pairWinCalc)
-// vpipBtn.addEventListener('click', updateVpip)
-
-
-
-
-
-
