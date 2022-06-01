@@ -80,6 +80,7 @@ body {
     padding: 20px;
     width: 300px;
     margin: auto;
+    background-color: rgb(240, 240, 240);
 
 }
 
@@ -320,3 +321,11 @@ h5 {
     margin: 10px 10px 10px 25px;
     word-wrap: break-word;
 } 
+
+#rangeBtn, #chartBtn, #pairBtn {
+    background-color: #bfbfbf;
+}
+
+#homebody {
+    background-color: #bfbfbf;
+}
